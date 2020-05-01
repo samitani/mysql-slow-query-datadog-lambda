@@ -11,15 +11,9 @@ SELECT id, name FROM tbl WHERE id IN (10, 20, 30)` => `SELECT id, name FROM tbl 
 
 # How to use
  
-1. Generate function.zip file.
+1. Download function.zip from github
 
-```
-$ git clone https://github.com/samitani/mysql-slow-query-datadog-lambda.git
-$ cd mysql-slow-query-datadog-lambda
-$ mkzip.sh
-$ ls -l function.zip
--rw-r--r--. 1 root root 17024 Apr 29 22:09 function.zip
-```
+https://github.com/samitani/mysql-slow-query-datadog-lambda/releases
 
 2. Create Lambda function with generated function.zip
 
