@@ -35,6 +35,11 @@ Generate Metrics with below Grok parser.
 ```
 SlowLogRule ^(\# Time: (%{date("yyMMdd  H:mm:ss"):date}|%{date("yyMMdd HH:mm:ss"):date})\n+)?\# User@Host: %{notSpace: user1}\[%{notSpace: user2}\] @ (%{notSpace: host}| ) *\[%{regex("[0-9.]*"): ip}\]  Id:[\x20\t]+%{number: id}\n+\# Query_time: %{number: query_time} *Lock_time: %{number: lock_time} *Rows_sent: %{number: rows_sent} *Rows_examined: %{number: rows_examined}\n(SET timestamp=%{number: timestamp};\n+)?%{regex("[a-zA-Z].*"):query}.
 ```
+
+## Example
+![image](https://user-images.githubusercontent.com/2655102/80804977-b6e40f00-8bf1-11ea-9529-485646d079c3.png)
+![image](https://user-images.githubusercontent.com/2655102/80805055-ea269e00-8bf1-11ea-9c24-6f13d2314cf1.png)
+
 ## Note
 `enhanced_lambda_metrics.py` and `lambda_function.py` were borrowed from below Datadog repository.
 
