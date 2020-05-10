@@ -15,7 +15,7 @@ SELECT id, name FROM tbl WHERE id IN (10, 20, 30)` => `SELECT id, name FROM tbl 
 
 https://github.com/samitani/mysql-slow-query-datadog-lambda/releases
 
-2. Create Lambda function with generated function.zip
+2. Create Lambda function with downloaded function.zip
 
 Specify Python3 as Runtime, `main.lambda_handler` as Handler
 
