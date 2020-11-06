@@ -1,4 +1,4 @@
-# mysql-slow-query-datadog-lambda
+# TEST mysql-slow-query-datadog-lambda
 
 AWS Lambda function to relay fingerprint-ed / normalized MySQL Slow Query logs to Datadog.
 
