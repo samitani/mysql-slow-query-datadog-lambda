@@ -11,6 +11,18 @@ SELECT id, name FROM tbl WHERE id IN (10, 20, 30)` => `SELECT id, name FROM tbl 
 
 # How to use
  
+## Export Slow query logs to CloudWatch Logs
+1. Enable slow_query_log parameter of your RDS database instance
+
+2. Modify your database instance to export slow query
+
+## Create Datadog API Key secrets on Secrets Manager
+1. Create Datadog API Key secrets with **PLAIN TEXT** format
+
+You can find your API Key here:
+https://app.datadoghq.com/account/settings#api
+
+## Create Lambda function
 1. Download function.zip from github
 
 https://github.com/samitani/mysql-slow-query-datadog-lambda/releases
@@ -27,7 +39,9 @@ Specify Python3 as Runtime, `main.lambda_handler` as Handler
 | DD_ENHANCED_METRICS   | false         | 
 | DD_SITE               | datadoghq.com |
 
-4. Create Lambda Subscription filter against your Slow Query log CloudWatch Log groups
+4. Edit IAM role to allow this lambda function to get secrets
+
+5. Create Lambda Subscription filter against your Slow Query log CloudWatch Log groups
 
 ## Datadog
 Generate Metrics with below Grok parser.
